@@ -6,6 +6,7 @@ const userRoutes = require("./routes/userRoutes.js");
 const cors = require("cors");
 
 dataBaseConnection();
+console.log("test");
 
 dotenv.config({
     path: ".env"
