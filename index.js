@@ -23,7 +23,7 @@ const corsOptions = {
     allowedHeaders: 'Content-Type,Authorization',
     credentials: false
 };
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use("/api/v1/user", userRoutes);
 
