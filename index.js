@@ -24,7 +24,7 @@ const corsOptions = {
     allowedHeaders: 'Content-Type,Authorization',
     credentials: false
 };
-app.use(cors());
+app.use(cors("https://main--appletv-server.netlify.app/api/v1/user"));
 
 app.use("/api/v1/user", userRoutes);
 
