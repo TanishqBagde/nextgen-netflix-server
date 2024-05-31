@@ -19,12 +19,16 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: '*',
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type,Authorization',
-    credentials: false
+    origin: 'https://appletvgpt.netlify.app',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Add the HTTP methods you need
+    allowedHeaders: ['Content-Type', 'Authorization'], // Add other headers you need
 };
-app.use(cors("https://main--appletv-server.netlify.app/api/v1/user"));
+
+app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 
 app.use("/api/v1/user", userRoutes);
 
